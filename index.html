@@ -149,7 +149,11 @@ border:1px solid #00ff9f;
 </section>
 
 <script>
-
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js"></script>
 /* Visitor Counter */
 let count = localStorage.getItem("visits");
 if(!count){
@@ -186,6 +190,27 @@ document.getElementById("aiResponse").innerText =
 }
 
 </script>
+  
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBjQsqRpBmikAN0syUK_nvNAqtvX5Axybs",
+  authDomain: "smash-hulk-sum.firebaseapp.com",
+  projectId: "smash-hulk-sum",
+  storageBucket: "smash-hulk-sum.firebasestorage.app",
+  messagingSenderId: "356070147058",
+  appId: "1:356070147058:web:1c6d74a1d407a735aa616b",
+  measurementId: "G-6TJDZ40FLZ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 </body>
 </html>
